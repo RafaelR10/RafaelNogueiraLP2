@@ -10,13 +10,14 @@ namespace Exercicio1_Carro
     {
         static void Main(string[] args)
         {
-                     int qtd;
+                    int qtd;
 
 
             Carro carro = new Carro();
             
             Console.Write("Insira a quantidade de veículos");
             qtd = int.Parse(Console.ReadLine());
+            string[] vetor = new string[qtd];
 
             for (int i = 0; i < qtd; i++)
             {
@@ -32,9 +33,13 @@ namespace Exercicio1_Carro
 
               
 
-                Console.WriteLine(Classificar(carro));
+               vetor[i] = Classificar(carro);
             }
+            for (int i = 0; i < qtd; i++)
+            {
 
+                Console.WriteLine(vetor[i]);
+            }
         }
         public static string Classificar(Carro carro)
         {
@@ -72,7 +77,9 @@ namespace Exercicio1_Carro
             return String.Format("{0} - {1} - {2}", carro.Modelo, Est, Pot);
         }
     }
-}
+ }
+    
+
         
     
 
